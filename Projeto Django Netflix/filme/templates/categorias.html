@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    - Categorias
+{% endblock %}
+
+{% block content %}
+
+<section class='bg-primary_black flex justify-center py-10'>
+    <div class="p-12 w-10/12 relative" >
+        <div class="text-center ">
+        <h2 class="pb-2 text-gray-200 text-2xl font-medium">
+           Categorias
+        </h2>
+        <hr>
+    </div>
+        <div class="flex flex-wrap items-center min-w-full movie_lis">
+            {% for categoria in categorias %}
+                <div class="mx-auto d-block m-4 relative overflow-hidden flex-shrink-0 rounded-md cursor-pointer h-70 w-96">
+                    <a href="{% url 'filme:categoria' categoria %}">
+                        <img src="{% static 'images/' %}{{ categoria }}.jpeg" class="object-cover w-full h-full " alt="">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <h2 class=" btn btn-outline-dark text-yellow-400 text-lg font-bold">{{ categoria }}</h2>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    
+</section>
+
+{% endblock %}

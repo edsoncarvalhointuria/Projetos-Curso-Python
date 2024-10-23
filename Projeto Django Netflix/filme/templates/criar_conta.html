@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<style>
+    .help-block, .form-control::placeholder, .form-label {
+        color: white !important;
+    }
+    #id_username_helptext, #id_password1_helptext, #id_password2_helptext{
+        color:yellow;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    - Criar Conta
+{% endblock %}
+
+{% block content %}
+    
+    <header class="min-h-screen bg-black bg-opacity-75 showcase bg-blend-overlay border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'images/background_netflix.png' %}');">
+        <div class="z-10 h-full py-32 md:py-0 text-gray-100 text-center flex items-center flex-col">
+            <form method="post">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Crie uma conta para continuar</legend>
+                    <div class="form-text">{{ form|crispy }}</div>
+                </fieldset>
+                <button class="bg-red-600 py-1 px-3 text-white w-full md:text-lg rounded-md" type="submit">Criar Conta</button>
+            </form>
+
+        </div>
+    </header>
+
+    <footer class=" px-5 py-10 ">
+        <ul class="flex justify-between items-center">
+            
+            <li>&copy; 2021</li>
+            <li> Feito com Python (Django)</li>
+            <li>Hashtag</li>
+        </ul>
+    </footer>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    - {{ object.titulo }}
+{% endblock %}
+
+{% block head %}
+<style>
+   /* Estilos da barra de rolagem para navegadores que suportam Webkit */
+.scrollbar::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #4A5568; /* Cor da barra de rolagem */
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: #2D3748; /* Cor da trilha da barra */
+}
+
+/* Para navegadores que não suportam Webkit */
+.scrollbar {
+    scrollbar-color: #4A5568 #2D3748;
+    scrollbar-width: thin;
+}
+
+</style>
+{% endblock %}
+    
+{% block content %}
+
+
+
+<main class='bg-primary_black min-h-screen w-full'>
+    <section class="bg-blend-overlay bg-black bg-opacity-50 h-screen relative bg-no-repeat pb-8 pl-6 flex  items-end bg-cover" style="background-image: url('{{ object.thumb.url }}');">
+        <div>
+            <h2 class="text-6xl font-semibold text-white my-4">
+                {{ object.titulo }}
+            </h2>
+            <p class="w-11/12 md:w-5/12 font-medium text-white my-4">
+                {{ object.descricao|slice:":100" }}...
+            </p>
+            <div class="flex my-4">
+                {% if object.serie.name %}
+                    <a href="{{ object.serie.episodios.all.first.video }}">
+                        <button class="btn btn-light flex items-center py-2 px-5 rounded-md">
+                            <ion-icon name="play" class="text-2xl"></ion-icon>
+                            <span class="ml-3 font-medium">
+                                Play
+                            </span>
+                        </button>
+                    </a>
+                {% else %}
+                    <a href="{{ object.filme }}">
+                        <button class="flex items-center bg-white py-2 px-5 rounded-md" style='color:black;'>
+                            <ion-icon name="play" class="text-2xl"></ion-icon>
+                            <span class="ml-3 font-medium">
+                                Play
+                            </span>
+                        </button>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </section> 
+    <section class='bg-primary_black flex justify-center py-10'>
+        <div class="p-8 w-10/12 relative" >
+            <h2 class="text-gray-200 text-3xl font-medium py-3">
+                Descrição:
+            </h2>
+            <div class="flex justify-left  items-center min-w-full  movie_lis">
+                <p class="text-gray-100 text-lg ">
+                    {{ object.descricao }}
+                </p>
+            </div>
+            <div class=" pt-5 flex justify-left items-center min-w-full  movie_lis">
+                <ion-icon name="information-circle-outline" class="text-2xl px-2"></ion-icon> {{ object.get_categoria_display }} &nbsp&nbsp| <ion-icon name="eye-outline" class="text-2xl px-2"></ion-icon> Visualizações: {{ object.visualizacoes }}
+            </div>
+            
+
+            <div style='margin-top:2rem;margin-bottom:2rem;'>
+                {% if object.serie.name %} 
+                    <h2 class="text-gray-200 text-3xl font-medium py-3">
+                        Episódios:
+                    </h2>
+                    {% for episodio in object.serie.episodios.all %}
+                        <h3 class='text-lg link-opacity-10-hover '>
+                            <a href="{{ episodio.video }}" class="flex items-center hover:bg-sky-700">
+                                <ion-icon name="play" class="text-2xl"></ion-icon> {{ forloop.counter}} - {{ episodio.titulo }}
+                            </a>
+                        </h3>
+                    {% endfor %}
+                    {% else %}
+                    <h2 class="text-gray-200 text-3xl font-medium py-3">
+                        Filme:
+                    </h2>
+                        <h3 class='text-lg'>
+                            <a href="{{ object.filme }}" class="flex items-center hover:bg-sky-700" >
+                                <ion-icon name="play" class="text-2xl"></ion-icon> {{ object.titulo }}
+                            </a>
+                        </h3>
+                    {% endif %}
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-primary_black flex justify-center py-10">
+        <div class="p-8 w-10/12 relative">
+            <h2 class="text-gray-200 text-2xl font-medium">
+                Relacionados:
+            </h2>
+            <div class="flex space-x-4 overflow-x-auto no-scrollbar movie_lis">
+                {% for filme in relacionados %}
+                    {% if filme.id != object.id %}
+                        <div class="bg-blue-500 overflow-hidden flex-shrink-0 rounded-md cursor-pointer h-70 w-96">
+                            <a href="{% url 'filme:detalhes_filme' filme.id %}">
+                                <img src="{{ filme.thumb.url }}" class="object-cover w-full h-full" alt="">
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+    
+{% endblock %}
