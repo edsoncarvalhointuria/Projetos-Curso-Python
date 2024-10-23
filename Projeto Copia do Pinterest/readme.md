@@ -10,6 +10,7 @@ Este projeto é uma  **simulação simplificada do Pinterest** , onde os usuári
 
 📌**Acesse:** [🌐Site
 ](https://edsoncarvalhointuria.pythonanywhere.com/)
+
 📧**Login:** teste@gmail.com
 
 🔑**Senha:** 123123
