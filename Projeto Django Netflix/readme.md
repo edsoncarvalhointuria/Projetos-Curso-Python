@@ -6,8 +6,10 @@ Este projeto é uma **simulação simplificada do Netflix**, onde os usuários p
 
 > 🔍 Observação: Este projeto não tem fins comerciais.
 
-**📌Acesse:** repositorio.com
+**📌Acesse:** 🎞[Acesse o site: ](https://fakeflix-production.up.railway.app/)
+
 **📧Login:** teste@gmail.com
+
 **🔑Senha:** 123123123aaa
 
 ---
