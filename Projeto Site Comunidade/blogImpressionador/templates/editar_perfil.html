@@ -1,0 +1,68 @@
+{% extends "perfil.html" %}
+
+{% block form_edit_perfil %}
+    <hr>
+    <div class="m-5">
+        
+        <form method="post" class="p-5 border container" style="width: 60%; border-radius: 25px;" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <div class=" fs-4 pb-2">Editar Perfil</div>
+            <div class="mb-3">
+                {{ form.username.label(class="form-label") }}
+                {% if form.username.errors %}
+                    {{ form.username(class="form-control is-invalid") }}    
+                    <div class="invalid-feedback">
+                        {% for erro in form.username.errors %}
+                            {{erro}}    
+                        {% endfor %}
+                    </div>
+                {% else %}    
+                    {{ form.username(class="form-control") }}
+                {% endif %}
+            </div>
+            <div class="mb-4">
+                {{ form.email.label(class="form-label") }}
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for erro in form.email.errors %}
+                            {{ erro }}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="form-control") }}
+                {% endif %}
+            </div>
+            <div class="mb-4">
+                <div class="input-group ">
+                    <label class="input-group-text" for="inputGroupFile01">{{ form.enviar_foto.label() }}</label>
+                    {{ form.enviar_foto(class="form-control") }}
+                </div>
+            {% if form.enviar_foto.errors %}
+                <div >
+                    {% for erro in form.enviar_foto.errors %}
+                        <span class="text-danger">{{ erro }}</span>
+                    {% endfor%}
+                </div>
+            {% endif %}
+        </div>
+
+        <hr>
+        <div class="form-label fs-5">Cursos</div>
+            {% for campo in form %}
+                {% if 'curso' in campo.name %}
+                    <div class="mb-3 form-check">
+                        {{ campo(class="form-check-input") }}
+                        {{ campo.label(class="form-check-label") }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {{ form.botao_editar(class="btn btn-primary") }}
+        </form>
+    </div>
+    <script>
+        window.onload = function() {
+            document.getElementById('username').scrollIntoView({ behavior: 'smooth' });
+        };
+    </script>
+{% endblock %}

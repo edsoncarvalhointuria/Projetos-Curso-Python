@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="pb-2 mt-3 container text-center">
+    <strong class="form-label fs-4 pb-2">Meus Posts</strong>
+</div>
+    {% for post in current_user.posts %}
+    <div class="container-md mb-4 text-center bg-body-tertiary" style="border-radius: 26px;" data-bs-theme="dark">
+        <div class="row">
+          <div class=" col col-3 border text-bg-light"  style="border-radius: 25px; " >
+                <!-- <strong class="badge text-nowrap bg-body-secondary border text-dark"></strong> -->
+                <div class="circle-image m-2">
+                <img src="{{ url_for('static', filename='fotos_perfil/{}'.format(post.autor.foto_perfil)) }}" class="rounded-circle " width="80">
+                
+                </div>
+                <h4 class="mb-2">@{{ post.autor.username }}</h4>
+                <div class="container text-center">
+                        <div class="row align-items-start">
+                                <div class="col">
+                                {% for curso in post.autor.cursos.split(";") %}
+                                        <button type="button" class="btn btn-dark mb-2" disabled>{{ curso }}</button>
+                                {% endfor %}
+                                </div>
+                        </div>
+                </div>
+          </div>
+          <div class="col position-sticky" >
+                <div class="p-3">
+                        {% if post.autor == current_user %}
+                        <div class="row align-items-start position-absolute bottom-0 start-0">
+                                <div class="col">
+                                        <a href="{{ url_for('ver_post', id_post=post.id) }}" class="ms-1 mb-1  btn btn-outline-info">Editar</a>
+                                </div>
+                        </div>
+                        {% endif %}
+                        <div class="text-light-emphasis fs-4 pb-3"> <a class="link-offset-2 link-underline link-underline-opacity-0" href="{{ url_for('ver_post', id_post=post.id) }}"><strong>{{ post.title }}</strong></a></div>
+                        <div class="text-light-emphasis">{{ post.body }}</div>
+                        <strong class="position-absolute bottom-0 end-0 badge text-nowrap fst-italic mb-2 me-3">{{ converter_data(post.data_criacao).strftime("%d/%m/%Y | %H:%M:%S") }}</strong>
+                </div>
+          </div>
+        </div>
+      </div>  
+    {% endfor %}
+{% endblock %}

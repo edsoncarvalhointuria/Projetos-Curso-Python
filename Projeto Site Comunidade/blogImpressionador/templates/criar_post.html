@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+<div class="m-5">
+    <form method="post" class="p-5 border container" style="width: 60%; border-radius: 25px;">
+        {{ form.csrf_token }}
+        <div class="form-label fs-4 pb-2">Criar Post</div>
+        <div class="mb-3">
+            {{ form.titulo.label(class="form-label")}}
+            {% if form.titulo.errors %}
+                {{ form.titulo(class="form-control is-invalid") }}    
+                <div class="invalid-feedback">
+                    {% for erro in form.titulo.errors %}
+                        {{erro}}    
+                    {% endfor %}
+                </div>
+            {% else %}    
+                {{ form.titulo(class="form-control") }}
+            {% endif %}
+        </div>
+
+        <div class="mb-3">
+            {{ form.corpo.label(class="") }}
+            {% if form.corpo.errors %}
+                {{ form.corpo(class="form-control is-invalid") }}    
+                <div class="invalid-feedback">
+                    {% for erro in form.corpo.errors %}
+                        {{erro}}    
+                    {% endfor %}
+                </div>
+            {% else %}    
+                {{ form.corpo(class="form-control") }}
+            {% endif %}
+        </div>
+        {{ form.botao_postar(class="btn btn-primary") }}
+    </form>
+</div>
+{% endblock %}

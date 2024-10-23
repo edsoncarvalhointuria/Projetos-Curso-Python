@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+    <div class="mt-3 container-md text-center">
+        <h3 class="display-6">
+            Faça seu cadastro
+        </h3>
+        <hr>
+    </div>
+
+    <div class="m-5">
+        
+        <form method="post" class="p-5 container border" , style="border-radius: 25px; width: 60%;">
+            {{ form_cadastrase.csrf_token }}
+            <div class="mb-3">
+                {{ form_cadastrase.username.label(class="form-label") }}
+                {% if form_cadastrase.username.errors %}
+                    {{ form_cadastrase.username(class="form-control is-invalid") }}    
+                    <div class="invalid-feedback">
+                        {% for erro in form_cadastrase.username.errors %}
+                            {{erro}}    
+                        {% endfor %}
+                    </div>
+                {% else %}    
+                    {{ form_cadastrase.username(class="form-control") }}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form_cadastrase.email.label(class="form-label") }}
+                {% if form_cadastrase.email.errors %}
+                    {{ form_cadastrase.email(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for erro in form_cadastrase.email.errors %}
+                            {{ erro }}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form_cadastrase.email(class="form-control") }}
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form_cadastrase.senha.label(class="form-label") }}
+                {% if form_cadastrase.senha.errors %}
+                    {{ form_cadastrase.senha(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for erro in form_cadastrase.senha.errors %}
+                            {{ erro }}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form_cadastrase.senha(class="form-control") }}
+                {% endif %}
+                <div id="passwordHelpBlock" class="form-text">
+                    Sua senha deve conter 6-20 caracteres
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                {{ form_cadastrase.confirmar_senha.label(class="form-label") }}
+                {% if form_cadastrase.confirmar_senha.errors %}
+                    {{ form_cadastrase.confirmar_senha(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for erro in form_cadastrase.confirmar_senha.errors %}
+                            {{ erro }}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form_cadastrase.confirmar_senha(class="form-control") }}
+                {% endif %}
+            </div>
+            {{ form_cadastrase.botao_cadastrar(class="btn btn-primary") }}
+            
+        </form>
+    </div>
+{% endblock %}
+
