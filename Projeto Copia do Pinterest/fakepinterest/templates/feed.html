@@ -8,11 +8,14 @@
         <h1 class="bloco-add-img">Feed Principal</h1>
     <div class="conteudo">
         {% for foto in fotos %}
-            <a href="{{ url_for('perfil', id_usuario = foto.id_usuario) }}" class="bloco-imagem">
-                <img src="{{ url_for('static', filename='fotos_post/{}'.format(foto.imagem)) }}">
-            </a>
+            <div class="feed">
+                <a href="{{ url_for('perfil', id_usuario = foto.id_usuario) }}" class="bloco-imagem">
+                    <img src="{{ url_for('static', filename='fotos_post/{}'.format(foto.imagem)) }}">
+                    <div class="feed-texto">{{ foto.usuario.username }}</div>
+                </a>
+            </div>
         {% endfor %}
-    </div>>
+    </div>
     </body>
 {% endblock %}
 

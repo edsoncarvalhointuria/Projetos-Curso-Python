@@ -34,7 +34,7 @@
 
                 {% for foto in usuario.fotos %}
                     <div class="bloco-imagem">
-                      <img src="{{ url_for('static', filename='fotos_post/{}'.format(foto.imagem)) }}" alt="foto.imagem" />
+                      <img src="{{ url_for('static', filename='fotos_post/{}'.format(foto.imagem)) }}" alt="{{ foto.imagem }}" class="imagem-carrossel"/>
                     </div>
                 {% endfor %}
 
@@ -46,6 +46,14 @@
             <div class="botao-arquivo">Este usuário ainda não publicou nenhuma foto</div>
         </div>>
     {% endif %}
+    <div id="modal" class="modal">
+      <span class="fechar">&times;</span>
+      <img class="modal-imagem" id="imagem-modal" />
+      <div class="seta-esquerda">&#9664;</div>
+      <div class="seta-direita">&#9654;</div>
+    </div>
+
+    {% block script %}
     <script>
       let input = document.getElementById("foto");
       let imagemArquivo = document.getElementById("imagem-arquivo");
@@ -57,5 +65,56 @@
         imagemArquivo.innerText = inputImagem.name;
       });
     </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const imagens = document.querySelectorAll('.imagem-carrossel');
+        const modal = document.getElementById('modal');
+        const imagemModal = document.getElementById('imagem-modal');
+        const fechar = document.querySelector('.fechar');
+        const setaEsquerda = document.querySelector('.seta-esquerda');
+        const setaDireita = document.querySelector('.seta-direita');
+    
+        // Verificar se todos os elementos estão presentes
+        if (imagens.length === 0 || !modal || !imagemModal || !fechar) {
+            console.error("Algum elemento necessário não foi encontrado.");
+            return;
+        }
+    
+        let imagemAtual = 0;
+    
+        function abrirModal(index) {
+            imagemAtual = index;
+            imagemModal.src = imagens[imagemAtual].src;
+            modal.style.display = 'flex';
+        }
+    
+        fechar.onclick = () => {
+            modal.style.display = 'none';
+        };
+    
+        setaDireita.onclick = () => {
+            imagemAtual = (imagemAtual + 1) % imagens.length;
+            imagemModal.src = imagens[imagemAtual].src;
+        };
+    
+        setaEsquerda.onclick = () => {
+            imagemAtual = (imagemAtual - 1 + imagens.length) % imagens.length;
+            imagemModal.src = imagens[imagemAtual].src;
+        };
+    
+        imagens.forEach((img, index) => {
+            img.onclick = () => abrirModal(index);
+        });
+    
+        modal.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    
+      });
+    </script>
+    {% endblock %}
   </body>
 {% endblock %}

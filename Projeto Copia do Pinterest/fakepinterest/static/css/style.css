@@ -170,7 +170,7 @@ img {
   text-decoration: none;
 }
 
-.conteudo {
+/* .conteudo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
@@ -185,6 +185,131 @@ img {
   border-radius: 20px;
   height: 40vh;
   object-fit: cover;
+} */
+
+.conteudo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 colunas no desktop */
+  width: 100%;
+  max-width: 100vw;
+  column-gap: 10px;
+  row-gap: 30px;
+  padding: 15px;
+  box-sizing: border-box;
+  column-count: 2; /* Ajusta o número de colunas */
+  column-gap: 10px;
+  margin: 0 auto; 
+}
+
+.bloco-imagem img {
+  width: 100%; /* Assegura que a imagem preencha o bloco */
+  height: 40vh; /* Mantém a proporção */
+  object-fit: cover; /* Ajusta para caber no espaço sem distorcer */
+  border-radius: 20px; /* Opcional: suaviza as bordas */
+  break-inside: avoid;
+  
+}
+
+/* Media query para tablets */
+@media (max-width: 768px) {
+  .conteudo {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para tablets */
+  }
+}
+
+/* Media query para celulares */
+@media (max-width: 480px) {
+  .conteudo {
+    grid-template-columns: 1fr; /* 1 coluna para celulares */
+  }
+}
+
+
+/* Container da imagem com o texto */
+.feed {
+  position: relative;
+  overflow: hidden; /* Para evitar que o conteúdo vaze */
+  border-radius: 10px; /* Opcional: cantos arredondados */
+}
+
+.feed img {
+  width: 100%;
+  height: 40vh;
+  display: block;
+  transition: 0.3s ease-in-out; /* Transição suave para o efeito hover */
+}
+
+/* Texto centralizado na parte inferior */
+.feed-texto {
+  position: absolute;
+  bottom: 10px; /* Alinhado no centro inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  border-radius: 5px; /* Suaviza as bordas do fundo */
+  opacity: 0; /* Invisível inicialmente */
+  transition: 0.3s ease-in-out; /* Suaviza a aparição */
+}
+
+/* Efeito de escurecimento e exibição do texto no hover */
+.feed:hover img {
+  filter: brightness(50%); /* Escurece a imagem */
+}
+
+.feed:hover .feed-texto {
+  opacity: 1; /* Exibe o texto */
+}
+
+
+.modal {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-imagem {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.seta-esquerda, .seta-direita {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  padding: 10px;
+}
+
+.seta-esquerda {
+  left: 10px;
+}
+
+.seta-direita {
+  right: 10px;
 }
 
 .bloco-add-img {
