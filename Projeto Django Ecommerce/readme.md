@@ -6,7 +6,7 @@ Este projeto é uma **cópia simplificada do site Reserva**. Este projeto simula
 
 > 🔍 Observação: Este projeto não tem fins comerciais.
 
-**📌Acesse:** [Acesse o site](fakereserva-production.up.railway.app)
+**📌Acesse:** [Acesse o site](https://fakereserva-production.up.railway.app/)
 
 **📧Login:** teste@gmail.com
 
