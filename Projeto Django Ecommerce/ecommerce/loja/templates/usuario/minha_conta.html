@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Minha Conta {% endblock %}
+
+{% block content %}
+
+    <main class="principal">
+        <section class="conta">
+          <div class="conta__container">
+            <div class="checkout__titulos">
+              <p class="checkout__titulo">Dados pessoais</p>
+            </div>
+                {% if erro_dados %}
+                    <h4 style="color: red;">{{ erro_dados }}</h4>
+                {% endif %}
+                {% if mensagem_dados %}
+                    <h4 style="color: green;">{{ mensagem_dados }}</h4>
+                {% endif %}
+            <form class="conta__form" action="{% url 'minha_conta' %}" method="post">
+                {% csrf_token %}
+              <div class="conta__item">
+                <label for="nome">Nome</label>
+                <input name="nome" type="text" {% if request.user.cliente.nome %}value="{{ request.user.cliente.nome }}"{% endif %} placeholder="Nome"/>
+              </div>
+
+              <div class="conta__item">
+                <label for="telefone">Telefone</label>
+                <input name="telefone" type="number" value="{{ request.user.cliente.telefone }}" placeholder="Telefone"/>
+              </div>
+  
+              <div class="conta__item conta__item--email">
+                <label for="email">E-mail</label>
+                <input name="email" type="email" value="{{ request.user.email }}" placeholder="E-mail"/>
+              </div>
+  
+              <button class="subtotal__botao" type="submit">
+                Salvar alterações
+              </button>
+            </form>
+          </div>
+
+          <div class="conta__container">
+            <div class="checkout__titulos">
+              <p class="checkout__titulo">Alterar Senha</p>
+            </div>
+
+            {% if erro_senha %}
+                <h4 style="color: red;">{{ erro_senha }}</h4>
+            {% endif %}
+            {% if mensagem_senha %}
+                <h4 style="color: green;">{{ mensagem_senha }}</h4>
+            {% endif %}
+
+            <form class="conta__form" action="{% url 'minha_conta' %}" method="post">
+
+              <div class="conta__item">
+                <label for="senha_atual">Senha Atual</label>
+                <input type="password" name="senha_atual" placeholder="Senha Atual" required>
+              </div>
+              
+              <div class="conta__item">
+                <label for="senha_atual">Nova Senha</label>
+                <input type="password" name="nova_senha" placeholder="Nova Senha" required>
+              </div>
+
+              <div class="conta__item">
+                <label for="senha_atual">Confirmar Nova Senha</label>
+                <input type="password" name="nova_senha_confirmacao" placeholder="Confirmar Nova Senha" required>
+              </div>
+  
+              <button class="subtotal__botao" type="submit">
+                Alterar Senha
+              </button>
+            </form>
+          </div>
+        </section>
+    </main>
+
+{% endblock %}

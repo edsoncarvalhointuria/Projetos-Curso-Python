@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Minha Conta {% endblock %}
+
+{% block content %}
+
+    <main class="principal">
+        <section class="conta">
+        
+          <div class="conta__container">
+            <div class="checkout__titulos">
+              <p class="checkout__titulo">Gerenciar Loja</p>
+            </div>
+            <div class="pedido">
+              <div class="pedido__cabecalho">
+                <div>
+                  <p><b>Faturamento Total: </b></p>
+                  <p>R$ {{ faturamento }}</p>
+                </div>
+                
+                <div>
+                  <p><b>Produtos Vendidos: </b></p>
+                  <p>{{ produtos }}</p>
+                </div>
+                
+  
+                <div>
+                  <p><b>Total Pedidos: </b></p>
+                  <p>{{ pedidos }}</p>
+                </div>
+              </div>
+            
+
+              <div class="pedido__corpo">
+                <div class="pedido__cabecalho">
+                  <p><b><a href="{% url 'exportar_relatorio' 'pedidos' %}">Exportar Pedidos</a></b></p>
+                </div>
+
+                <div class="tabela__produto-textos">
+                </div>
+
+                <div class="pedido__cabecalho">
+                    <p><b><a href="{% url 'exportar_relatorio' 'clientes' %}">Exportar Clientes</a></b></p>
+                </div>
+
+                <div class="tabela__produto-textos">
+                </div>
+
+                <div class="pedido__cabecalho">
+                    <p><b><a href="{% url 'exportar_relatorio' 'enderecos' %}">Exportar Endereços</a></b></p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        
+        </section>
+      </main>
+
+{% endblock %}

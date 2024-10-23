@@ -1,0 +1,55 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Pedido Aprovado {% endblock %}
+
+{% block content %}
+    <main class="principal">
+        <section class="conta">
+        
+          <div class="conta__container">
+            <div class="checkout__titulos">
+              <p class="checkout__titulo">Pedido Aprovado - você receberá um email com mais informações</p>
+            </div>
+
+            <div class="pedido">
+              <div class="pedido__cabecalho">
+                <div>
+                  <p><b>Id Pedido</b></p>
+                  <p>{{ pedido.codigo_transacao }}</p>
+                </div>
+  
+                <div>
+                  <p><b>Valor Final</b></p>
+                  <p>R$ {{ pedido.valor_total }}</p>
+                </div>
+  
+                <div>
+                  <p><b>Número do pedido</b></p>
+                  <p>{{ pedido.id }}</p>
+                </div>
+              </div>
+              
+
+              {% for item in pedido.itens %}
+              <div class="pedido__corpo">
+                
+                <div class="tabela__imagem">
+                  <img src="{{ item.item_estoque.produto.imagem.url }}" alt="Imagem do Produto">
+                </div>
+                <div class="tabela__produto-textos">
+                  <p><b>{{ item.item_estoque.produto.nome }}</b></p>
+                  <p><b>Tamanho:</b> {{ item.item_estoque.tamanho }}</p>
+                  <p><b>Preço:</b> R$ {{ item.valor }}</p>
+                  <p><b>Quantidade:</b> {{ item.quantidade }}</p>
+                </div>
+                
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        
+        </section>
+      </main>
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Detalhes Produto{% endblock %}
+
+{% block head %}
+<style>
+    .header {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .header h1 {
+        font-size: 3em;
+        color: #333;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    {% if itens_estoque %}
+    <main class="principal principal--padding-b principal--gap">
+        <section class="s-produto">
+          <div class="s-produto__carrossel">
+            <div class="s-produto__carrossel-itens">
+              <div class="s-produto__carrossel-img">
+                <img
+                  src="{{ produto.imagem.url }}"
+                  alt="Imagem Carrossel 1"
+                />
+              </div>
+              <div class="s-produto__carrossel-img" style="overflow: hidden;">
+                <img
+                  src="{{ produto.imagem.url }}"
+                  alt="Imagem Carrossel 2"
+                  style="transform: scale(1.6);"
+                />
+              </div>
+              
+            </div>
+  
+            <div class="s-produto__carrossel-botoes">
+              <div
+                class="s-produto__carrossel-botao s-produto__carrossel-botao--selecionado"
+              ></div>
+              <div class="s-produto__carrossel-botao"></div>
+              <div class="s-produto__carrossel-botao"></div>
+              <div class="s-produto__carrossel-botao"></div>
+              <div class="s-produto__carrossel-botao"></div>
+            </div>
+          </div>
+  
+          <div class="s-produto__informacoes">
+            <div class="s-produto__breadcrumbs">
+              <span><a href="{% url 'loja' %}">Loja</a></span>
+              <span><a href="{% url 'loja' produto.categoria.slug %}">{{ produto.categoria.nome }}</a></span>
+              <span><a href="{% url 'loja' %}{{ produto.categoria.slug }}-{{ produto.tipo.slug }}">{{ produto.tipo.nome }}</a></span>
+              <span>
+                <p>{{ produto.nome }}</p>
+              </span>
+            </div>
+  
+            <div class="s-produto__infos">
+              <h1 class="s-produto__titulo">{{ produto.nome }}</h1>
+  
+              <p class="s-produto__preco">R$ {{ produto.preco }}</p>
+  
+              <div class="s-produto__cor">
+                {% if cor_selecionada %}
+                    <p class="s-produto__cor-nome">Cor: <span>{{ cor_selecionada }}</span></p>
+                {% else %}
+                    <p class="s-produto__cor-nome">Cor: <span><strong>Selecione Uma Cor</strong></span></p>
+                {% endif %}
+                <div class="s-produto__cores">
+                  {% for cor in cores%}
+                    <a
+                        href="{{ cor.id }}"
+                        class="s-produto__cores-item"
+                        style="background-color: {{ cor.codigo}}"
+                    ></a>
+                  {% endfor %}
+                </div>
+              </div>
+
+              {% if cor_selecionada %}
+              <form  method="post" action="{% url 'adicionar_carrinho' produto.id %}">
+                {% csrf_token %}
+                    <div class="s-produto__tamanho">
+                        <div class="s-produto__tamanhos">    
+                            {% for tamanho in tamanhos %}
+                            <div class="menu__tamanho">
+                                <div class="s-produto__tamanhos-item">{{ tamanho }}</div>
+                                <input class="menu__checkbox" type="radio" name="tamanho" value="{{ tamanho }}">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="cor" value="{{ cor_selecionada.id }}"> 
+                        <button type="submit" class="s-produto__adicicionar">Adicionar à sacola</button>
+                    </div>
+                </form>
+            {% endif %}
+            </div>
+  
+            
+  
+            <div class="s-produto__descricao">
+              <p class="s-produto__descricao-titulo">Descrição do produto</p>
+              <div class="s-produto__descricao-textos">
+                <p>
+                  {{ produto.nome }}
+                </p>
+                <p>
+                  COMPOSIÇÃO <br />
+                  100% Algodão
+                </p>
+                <p>
+                  CÓDIGO DO PRODUTO <br />
+                  Ref: <span>{{ produto.id }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {% if produtos_semelhantes %}
+        <section class="similares">
+          <h2 class="similares__titulo">
+            Gostou desse produto? Veja itens similares
+          </h2>
+  
+          <div class="similares__container">
+            {% for prod in produtos_semelhantes %}
+                {% if forloop.counter < 5 %}
+                    <a
+                    href="{% url 'ver_produto' prod.id %}"
+                    class="produto"
+                    >
+                    <div class="produto__imagem">
+                        <img
+                        src="{{ prod.imagem.url }}"
+                        alt="Imagem do Produto"
+                        />
+                    </div>
+                    <div class="produto__textos">
+                        <p class="produto__titulo">{{ prod.nome }}</p>
+                        <div class="produto__preco">
+                        <p class="produto__avista">R$ {{ prod.preco }}</p>
+                        </div>
+                    </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+            
+          </div>
+        </section>
+        {% endif %}
+      </main>
+    <script type="text/javascript" src="{% static 'js/produto.js' %}"></script>
+    {% else %}
+        <header class="header" style="text-align: center;">
+            <div class="sacola">
+                <div class="sacola__titulos">
+                <h1 class="sacola__titulo">Produto Sem Estoque</h1>
+                <p>
+                    <a href="{% url 'loja' %}" class="cabecalho__link"><span class="sacola__realce-verde">Visite Nossa Loja</span></a>
+                </p>
+                </div>
+            </div>
+        </header>
+    {% endif %}
+{% endblock %}
+
