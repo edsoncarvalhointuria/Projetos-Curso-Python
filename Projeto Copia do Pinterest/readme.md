@@ -9,7 +9,9 @@ Este projeto é uma  **simulação simplificada do Pinterest** , onde os usuári
 
 
 📌**Acesse:** repositorio.com
+
 📧**Login:** teste@gmail.com
+
 🔑**Senha:** 123123
 
 ---
