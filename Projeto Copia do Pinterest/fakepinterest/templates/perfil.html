@@ -1,0 +1,61 @@
+{% extends "homepage.html" %}
+
+{% block title %}
+    Perfil - {{ usuario }}
+{% endblock %}
+{% block body %}
+<body xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+      <header>
+        {% include "nav.html" %}
+      </header>
+    {% if form %}
+        <form class="bloco-add-img" method="POST" class="botao-arquivo" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <h2>{{ usuario.username }} - Enviar foto</h2>
+            <div class="bloco-arquivo">
+                <label for="foto" class="botao-arquivo">
+                Escolher arquivo
+                {{ form.foto (class="input-arquivo", id="foto") }}
+                </label>
+                <span id="imagem-arquivo" class=""></span>
+            </div>
+            <div>
+                {{ form.botao(class="botao-login") }}
+            </div>
+        </form>
+
+    </div>
+    {% else %}
+        <h2 class="bloco-add-img">{{ usuario.username }} - Fotos</h2>
+    {% endif %}
+    {% if usuario.fotos %}
+        <div class="conteudo">
+
+                {% for foto in usuario.fotos %}
+                    <div class="bloco-imagem">
+                      <img src="{{ url_for('static', filename='fotos_post/{}'.format(foto.imagem)) }}" alt="foto.imagem" />
+                    </div>
+                {% endfor %}
+
+        </div>
+    {% else %}
+        <br>
+        <br>
+        <div class="bloco-add-img">
+            <div class="botao-arquivo">Este usuário ainda não publicou nenhuma foto</div>
+        </div>>
+    {% endif %}
+    <script>
+      let input = document.getElementById("foto");
+      let imagemArquivo = document.getElementById("imagem-arquivo");
+
+      input.addEventListener("change", () => {
+        let inputImagem = document.querySelector("input[type=file]").files[0];
+
+        imagemArquivo.classList.add("visivel");
+        imagemArquivo.innerText = inputImagem.name;
+      });
+    </script>
+  </body>
+{% endblock %}
