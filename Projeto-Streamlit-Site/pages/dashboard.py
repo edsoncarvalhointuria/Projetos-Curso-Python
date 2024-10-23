@@ -25,8 +25,8 @@ with st.container(border=True):
     df_mes = df_mes[df_mes["Ano"]==ano]
 
     col_esquerda, col_direita = st.columns([1,1])
-    col_esquerda.metric("Total Pago", value=f"R${df_mes["Valor Negociado"].sum():,}")
-    col_direita.metric("Total Desconto", value=f"R${df_mes["Desconto Concedido"].sum():,}")
+    col_esquerda.metric("Total Pago", value=f"R${df_mes['Valor Negociado'].sum():,}")
+    col_direita.metric("Total Desconto", value=f"R${df_mes['Desconto Concedido'].sum():,}")
 
     import plotly.graph_objects as go
 
