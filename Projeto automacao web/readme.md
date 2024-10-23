@@ -24,7 +24,7 @@ Este projeto simula a necessidade de comparação entre fornecedores para insumo
 
 <img src="projeto_selenium.gif" alt="webscraping">
 
-> O projeto executa o envio automatizado de **26 emails** em poucos minutos, com análises completas e indicadores atualizados. 🐱‍💻
+> O projeto faz a análise dos produtos e envia por email todas as ocorrências. 🐱‍💻
 
 ---
 
