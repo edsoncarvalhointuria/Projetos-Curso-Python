@@ -1,0 +1,54 @@
+#: import utils kivy.utils
+<AcompanharVendedorPage>:
+
+    FloatLayout:
+        Label:
+            pos_hint:{"right": 0.9, "top":0.85}
+            size_hint: 0.8, 0.15
+            bold:True
+            markup: True
+            text: 'Insira o [color=#00CFDB]ID de outro vendedor[/color] para acompanha-lo'
+        TextInput:
+            pos_hint:{"right":0.9, "top":0.70}
+            size_hint: 0.8, 0.08
+            id: search_vendedor
+            hint_text: 'Digite o ID'
+            input_filter:'int'
+
+        LabelButton:
+            pos_hint:{"right":0.9, "top":0.60}
+            size_hint:0.8, 0.2
+            text:'Adicionar Vendedor'
+            on_release: app.adicionar_vendedor(search_vendedor.text)
+
+            canvas.before:
+                Color:
+                    rgb:(1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source:'icones/botao.png' if self.state == "normal" else 'icones/botao_apertado.png'
+        Label:
+            pos_hint:{"right":0.9, "top": 0.45}
+            size_hint:0.8, 0.2
+            text:""
+            id: feedback_search
+
+        FloatLayout:
+            pos_hint:{"right":1, "top":0.12}
+            size_hint: 1, 0.12
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex('#006D7E')
+                Rectangle:
+                    pos:self.pos
+                    size: self.size
+            
+            ImageButton:
+                pos_hint:{"right":0.25, "top":0.9}
+                size_hint: 0.25, 0.8
+
+                source:'icones/voltar.png'
+                on_release: app.trocar_tela('ajustespage')
+
+

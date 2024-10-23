@@ -1,0 +1,75 @@
+#: import utils kivy.utils
+<AjustesPage>:
+
+    FloatLayout:
+        canvas:
+            #Color:
+            #   rgb: (0,0,0,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source:'icones/bg1.png'
+        Label:
+            pos_hint:{"right": 0.9, "top": 0.99}
+            size_hint: 0.8, 0.15
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao_fino.png'
+            bold: True
+            text:'Seu ID: ###'
+            id: id_vendedor
+        
+        GridLayout:
+            columns:1
+            rows:3
+            pos_hint: {"right": 0.9, "top":0.85}
+            size_hint: 0.8 , 0.70
+            
+            GridLayout:
+                rows:1
+                ImageButton:
+                    source: 'icones/foto_perfil.png'
+                    on_release: app.trocar_tela('alterarfotopage')
+
+                LabelButton:
+                    text:'Alterar Foto Perfil'
+                    on_release: app.trocar_tela('alterarfotopage')
+
+            GridLayout:
+                rows:1
+                ImageButton:
+                    source: 'icones/adicionar_vendedor.png'
+                    on_release: app.trocar_tela('acompanharvendedorpage')
+
+                LabelButton:
+                    text:'Acompanhar Vendedor'
+                    on_release: app.trocar_tela('acompanharvendedorpage')
+
+            GridLayout:
+                rows:1
+                ImageButton:
+                    source: 'icones/vendas_empresa.png'
+                    on_release: app.trocar_tela('vertodasvendaspage')
+
+                LabelButton:
+                    text:'Ver todas as vendas'
+                    on_release: app.ver_todas_vendas()
+        FloatLayout:
+            rows:1
+            pos_hint:{"right":1, "top":0.12}
+            size_hint: 1, 0.12
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#006D7E")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            ImageButton:
+                pos_hint:{"right":0.25, "top":0.9}
+                size_hint: 0.25, 0.8
+
+                source:'icones/voltar.png'
+                on_release: app.trocar_tela('homepage')

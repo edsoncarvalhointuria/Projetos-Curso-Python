@@ -1,0 +1,56 @@
+<LoginPage>:
+    FloatLayout:
+        Label:
+            pos_hint:{"right":0.9, "top": 1 }
+            size_hint: 0.8, 0.2
+            text:'CONTROLE  DE  [color=#00CFDB]VENDAS  APP[/color]'
+            bold:True
+            markup:True
+
+        TextInput:
+            pos_hint:{"right":0.9, "top":0.75}
+            size_hint: 0.8, 0.09
+            id: email
+            hint_text: "E-mail"
+        
+        TextInput:
+            pos_hint:{"right":0.9, "top":0.6}
+            size_hint: 0.8, 0.09
+            password:True
+            id: senha
+            hint_text: "Senha"
+
+        Label:
+            pos_hint:{"right":0.9, "top":0.48}
+            size_hint: 0.8, 0.15
+            text:'[color=#00CFDB]Faça seu login[/color]'
+            bold:True
+            markup:True
+            id: message_login
+
+        GridLayout:
+            rows:1
+            pos_hint:{"right":0.95, "top":0.3}
+            size_hint: 0.9, 0.15
+            LabelButton:
+                text:'Faça Seu Login'
+                on_release:app.firebase.fazer_login(email.text, senha.text)
+                bold:True
+                canvas.before:
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                        source:"icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+
+            LabelButton:
+                text:'Criar Conta'
+                on_release: app.firebase.criar_conta(email=email.text, senha=senha.text)
+                bold:True
+                canvas.before:
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                        source:'icones/botao.png' if self.state == "normal" else 'icones/botao_apertado.png'
+
+
+        

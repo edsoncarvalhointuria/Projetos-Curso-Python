@@ -1,0 +1,116 @@
+#: import utils kivy.utils
+<AdicionarVendasPage>:
+
+    FloatLayout:
+        Label:
+            pos_hint:{"right": 1, "top":0.99}
+            size_hint: 1, 0.05
+            text: 'Selecionar Cliente'
+            id: label_selecionar_cliente
+        ScrollView:
+            pos_hint: {"right":1,"top":0.94}
+            size_hint: 1, 0.15
+            GridLayout:
+                rows: 1
+                id: lista_clientes
+                padding: 10,10,10,10
+                size_hint_x: None
+                width: self.minimum_width
+                col_default_width: "100dp"
+                col_force_default: True
+                
+
+        Label:
+            pos_hint: {"right": 1, "top":0.79}
+            size_hint: 1, 0.05
+            text:"Selecionar Produto"
+            id: label_selecionar_produto
+        ScrollView:
+            pos_hint: {"right":1,"top":0.74}
+            size_hint: 1, 0.15
+            
+            GridLayout:
+                id: lista_produtos
+                rows:1
+                padding: 10,10,10,10
+                size_hint_x: None
+                width: self.minimum_width
+                col_default_width: "90dp"
+                col_force_default: True
+
+        Label:
+            pos_hint:{"right": 1, "top": 0.56}
+            size_hint: 1, 0.05
+            id: label_data
+            text: "Data: 01/01/2024"
+            bold:True
+            
+        GridLayout:
+            pos_hint:{"right":0.9, "top": 0.49}
+            size_hint:0.8, 0.05
+            rows:1
+            id: unidades
+            LabelButton:
+                text: "kg"
+                on_release: app.selecionar_texto(self.text, unidades, "unidades")
+            LabelButton:
+                text: "unidades"
+                on_release: app.selecionar_texto(self.text, unidades, "unidades")
+            LabelButton:
+                text: "litros"
+                on_release: app.selecionar_texto(self.text, unidades, "unidades")
+        GridLayout:
+            rows:1
+            pos_hint:{"right": 0.95, "top": 0.42}      
+            size_hint: 0.90, 0.07
+            Label:
+                text:"Preço Total(R$)"
+                id: label_preco_total
+            TextInput:
+                id: preco_total
+                hint_text: "Digite o preço"
+                input_filter: "float"
+
+        GridLayout:
+            rows:1
+            pos_hint:{"right": 0.95, "top": 0.33}      
+            size_hint: 0.90, 0.07
+            Label:
+                text:"Quantidade Total"
+                id: label_quantidade_total
+            TextInput:
+                id: quantidade_total
+                hint_text: "Quantidade"
+                input_filter: "int"
+
+        GridLayout:
+            pos_hint:{"right": 1, "top":0.22}
+            size_hint: 1, 0.2
+            rows: 1
+
+            LabelButton:
+                text: "Cancelar"
+                on_release: app.trocar_tela("homepage")
+
+                canvas.before:
+                    Color:
+                        rgb: (1,1,1,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source:"icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+            LabelButton:
+                text: "Adicionar Venda"
+                on_release: app.adicionar_venda()
+
+                canvas.before:
+                    Color:
+                        rgb:(1,1,1,1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source:"icones/botao.png" if self.state == "normal" else "icones/botao_apertado.png"
+                
+
+
+

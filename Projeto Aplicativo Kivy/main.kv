@@ -1,0 +1,69 @@
+#: include kv/homepage.kv
+#: include kv/ajustespage.kv
+#: include kv/adicionarvendaspage.kv
+#: include kv/acompanharvendedorpage.kv
+#: include kv/alterarfotopage.kv
+#: include kv/listarvendedorespage.kv
+#: include kv/vertodasvendaspage.kv
+#: include kv/loginpage.kv
+#: include kv/veroutrovendedorpage.kv
+#: import utils kivy.utils
+
+FloatLayout:
+
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex('#001824')
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+    Image:
+        pos_hint: {"right":0.9, "top": 0.95}
+        size_hint: 0.8, 0.2
+        source:'icones/logo1.png'
+        id: foto_perfil
+
+    ScreenManager:
+        id : screen_manager
+        pos_hint: {"right": 1, "top": 0.75}
+        size_hint: 1, 0.75
+
+        LoginPage:
+            id:loginpage
+            name:'loginpage'
+
+        HomePage:
+            name: 'homepage'
+            id: homepage
+
+        AjustesPage:
+            name: 'ajustespage'
+            id: ajustespage
+        
+        AdicionarVendasPage:
+            name: 'adicionarvendaspage'
+            id: adicionarvendaspage
+
+        ListarVendedoresPage:
+            name: 'listarvendedorespage'
+            id: listarvendedorespage
+        
+        AlterarFotoPage:
+            name: 'alterarfotopage'
+            id: alterarfotopage
+
+        AcompanharVendedorPage:
+            name: 'acompanharvendedorpage'
+            id : acompanharvendedorpage
+
+        VerTodasVendasPage:
+            name: 'vertodasvendaspage'
+            id: vertodasvendaspage
+
+        VerOutroVendedorPage:
+            name:"veroutrovendedorpage"
+            id: veroutrovendedorpage
+
+
