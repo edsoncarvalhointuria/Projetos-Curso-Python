@@ -1,0 +1,33 @@
+cookie:
+  expiry_days: 30
+  key: 355b8f7306f714f23f12e9f6e48b783a # Must be a string
+  name: credenciais_edspace
+credentials:
+  usernames:
+    edson@gmail.com:
+      email: edson@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      first_name: Edson
+      last_name: Carvalho Inturia
+      logged_in: False # Will be managed automatically
+      password: '123123' # Will be hashed automatically
+    teste@gmail.com:
+      email: teste@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      first_name: Sr. Teste
+      last_name: Testando
+      logged_in: False # Will be managed automatically
+      password: '321321' # Will be hashed automatically
+# oauth2: # Optional
+#   google: # Follow instructions: https://developers.google.com/identity/protocols/oauth2
+#     client_id: # To be filled
+#     client_secret: # To be filled
+#     redirect_uri: # URL to redirect to after OAuth2 authentication
+#   microsoft: # Follow instructions: https://learn.microsoft.com/en-us/graph/auth-register-app-v2
+#     client_id: # To be filled
+#     client_secret: # To be filled
+#     redirect_uri: # URL to redirect to after OAuth2 authentication
+#     tenant_id: # To be filled
+# pre-authorized: # Optional
+#   emails:
+#   - edson@gmail.com
