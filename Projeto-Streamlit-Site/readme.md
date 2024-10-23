@@ -5,8 +5,10 @@
 Este projeto tem o objetivo de simular um site interno de uma empresa fictícia, apresentando os dados de forma gráfica e iterativa.
 > 🔍 Este projeto é apenas uma simulação, e os dados e credenciais são fictícios.
 
-**acesse:** repositorio.com
+**acesse:** [Acesse o Site](https://dashboardempresarial-production.up.railway.app/)
+
 **login:** edson@gmail.com
+
 **senha:** 123123
 
 ---
