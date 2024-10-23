@@ -9,7 +9,7 @@ Este projeto consiste na construção de um **modelo de previsão de preço** pa
 
 📑  **Acompanhe o processo de desenvolvimento** :
 [Visualize no Nbviewer
-](https://nbviewer.org/)
+](https://nbviewer.org/github/edsoncarvalhointuria/Projetos-Curso-Python/blob/1633059e58600dcc52f8516a31ddab3b4168423c/Projeto%20Ciencia%20de%20Dados/Solu%C3%A7%C3%A3o%20Airbnb%20Rio.ipynb)
 
 ---
 
