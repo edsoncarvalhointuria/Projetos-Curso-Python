@@ -2,7 +2,7 @@ GitPython
 Jinja2
 MarkupSafe
 Pygments
-altair
+altair<4
 attrs
 beautifulsoup4
 blinker
