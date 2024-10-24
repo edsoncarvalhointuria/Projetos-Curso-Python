@@ -27,7 +27,6 @@ packaging
 pandas
 peewee
 pillow
-pip
 platformdirs
 protobuf
 pyarrow
