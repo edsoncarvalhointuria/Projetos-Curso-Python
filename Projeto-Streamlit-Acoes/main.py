@@ -2,6 +2,7 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd
 from datetime import timedelta
+from pathlib import Path
 
 
 @st.cache_data
@@ -13,7 +14,8 @@ def pegar_acoes(empresas):
     return acoes['Close']
 
 def carregar_indices():
-    lista_empresas = pd.read_csv("IBOV.csv", sep=";", encoding="latin-1")["Código"] + ".SA"
+    caminho = Path("IBOV.csv")
+    lista_empresas = pd.read_csv(caminho, sep=";", encoding="latin-1")["Código"] + ".SA"
     return list(lista_empresas.dropna(how="all"))
 
 
