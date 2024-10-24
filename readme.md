@@ -55,7 +55,7 @@ Um **e-commerce funcional** inspirado no site da Reserva. Permite cadastrar prod
 **Descrição:**
 Simula um **gerenciador de vendas** para fornecedores de uma empresa fictícia. Permite adicionar vendas, seguir outros vendedores e visualizar o desempenho.
 
-🔗 [Acesse o projeto](kivy-link)
+🔗 [Acesse o projeto](Projeto Aplicativo Kivy)
 
 **Tecnologias:**
 `Kivy`, `Requests`, `OS`, `Datetime`
