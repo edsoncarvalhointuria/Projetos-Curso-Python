@@ -15,7 +15,7 @@ def pegar_acoes(empresas):
 
 def carregar_indices():
     caminho = Path("IBOV.csv")
-    lista_empresas = pd.read_csv(caminho, sep=";", encoding="latin-1")["Código"] + ".SA"
+    lista_empresas = pd.read_csv(str(caminho.absolute()).replace("\\", "/"), sep=";", encoding="latin-1")["Código"] + ".SA"
     return list(lista_empresas.dropna(how="all"))
 
 
