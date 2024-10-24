@@ -5,7 +5,8 @@
 Este projeto tem como objetivo simular um **site interno para monitoramento de preços de ações** com dados obtidos em tempo real via  **Yahoo Finance** .
 > 🔍 Este projeto é apenas para fins de estudo e não possui uso comercial.
 
-**Acesse: ** [Acesse o Site](https://projeto-acoes.streamlit.app/)
+**Acesse:** [Acesse o Site](https://projeto-acoes.streamlit.app/)
+
 ---
 
 ### 📊 Funcionalidades
