@@ -14,8 +14,11 @@ def pegar_acoes(empresas):
     return acoes['Close']
 
 def carregar_indices():
-    caminho = Path("IBOV.csv")
-    lista_empresas = pd.read_csv(str(caminho.absolute()).replace("\\", "/"), sep=";", encoding="latin-1")["Código"] + ".SA"
+    caminho = Path("Projeto-Streamlit-Acoes", "IBOV.csv")
+    if caminho.exists():
+        lista_empresas = pd.read_csv(str(caminho.absolute()).replace("\\", "/"), sep=";", encoding="latin-1")["Código"] + ".SA"
+    else:
+        lista_empresas = pd.read_csv("IBOV.csv", sep=";", encoding="latin-1")["Código"] + ".SA"
     return list(lista_empresas.dropna(how="all"))
 
 
