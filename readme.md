@@ -38,7 +38,7 @@ Um **e-commerce funcional** inspirado no site da Reserva. Permite cadastrar prod
 
 ## 📊 Telas Tkinter
 
-**Descrição:**Duas interfaces desktop:
+**Descrição:** Duas interfaces desktop:
 
 - **Cotação de Moedas:** Consulta e exporta cotações usando uma API.
 - **Controle de Estoque (CRUD):** Gestão de insumos com operações de criação, atualização e exclusão.
