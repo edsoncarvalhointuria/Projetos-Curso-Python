@@ -43,7 +43,7 @@ Um **e-commerce funcional** inspirado no site da Reserva. Permite cadastrar prod
 - **Cotação de Moedas:** Consulta e exporta cotações usando uma API.
 - **Controle de Estoque (CRUD):** Gestão de insumos com operações de criação, atualização e exclusão.
 
-🔗 [Acesse o projeto](tkinter-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/d2f72c82dd511942f287be182f324857e5c5199e/Projeto%20Tkinter)
 
 **Tecnologias:**
 `Tkinter`, `Requests`, `Pyodbc`, `Pandas`
