@@ -55,7 +55,7 @@ Um **e-commerce funcional** inspirado no site da Reserva. Permite cadastrar prod
 **Descrição:**
 Simula um **gerenciador de vendas** para fornecedores de uma empresa fictícia. Permite adicionar vendas, seguir outros vendedores e visualizar o desempenho.
 
-🔗 [Acesse o projeto](Projeto Aplicativo Kivy)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20Aplicativo%20Kivy)
 
 **Tecnologias:**
 `Kivy`, `Requests`, `OS`, `Datetime`
@@ -67,7 +67,7 @@ Simula um **gerenciador de vendas** para fornecedores de uma empresa fictícia. 
 **Descrição:**
 Um dashboard para **monitorar ações da Bovespa**, com dados em tempo real via Yahoo Finance. Exibe a performance de ativos e de uma carteira fictícia.
 
-🔗 [Acesse o projeto](streamlit-bovespa-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto-Streamlit-Acoes)
 
 **Tecnologias:**
 `Streamlit`, `Yahoo Finance API`, `Pandas`, `Plotly`
@@ -79,7 +79,7 @@ Um dashboard para **monitorar ações da Bovespa**, com dados em tempo real via 
 **Descrição:**
 Projeto de automação que faz uma busca automática sobre o preço de determinados produtos.
 
-🔗 [Acesse o projeto](selenium-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20automacao%20web)
 
 **Tecnologias:**
 `Selenium`, `Python`, `ChromeDriver`
@@ -91,7 +91,7 @@ Projeto de automação que faz uma busca automática sobre o preço de determina
 **Descrição:**
 Automação de análise de dados e envio automático de OnePages personalizadas.
 
-🔗 [Acesse o projeto](onepages-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20de%20automacao)
 
 **Tecnologias:**
 `Selenium`, `Pandas`, `PyAutoGUI`
@@ -103,7 +103,7 @@ Automação de análise de dados e envio automático de OnePages personalizadas.
 **Descrição:**
 Projeto explorando conceitos de **ciência de dados**, incluindo análise exploratória e modelagem preditiva.
 
-🔗 [Acesse o projeto](ciencia-dados-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20Ciencia%20de%20Dados)
 
 **Tecnologias:**
 `Pandas`, `NumPy`, `Matplotlib`, `Scikit-Learn`
@@ -115,7 +115,7 @@ Projeto explorando conceitos de **ciência de dados**, incluindo análise explor
 **Descrição:**
 Clone do **Pinterest** com funcionalidades de login, upload de imagens e organização de painéis.
 
-🔗 [Acesse o projeto](pinterest-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20Copia%20do%20Pinterest)
 
 **Tecnologias:**
 `Flask`, `SQLite`, `Bootstrap`
@@ -127,7 +127,7 @@ Clone do **Pinterest** com funcionalidades de login, upload de imagens e organiz
 **Descrição:**
 Site comunitário com **sistema de posts, comentários e perfis**, desenvolvido com Flask.
 
-🔗 [Acesse o projeto](site-comunidade-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20Site%20Comunidade)
 
 **Tecnologias:**
 `Flask`, `SQLite`, `Jinja`
@@ -139,7 +139,7 @@ Site comunitário com **sistema de posts, comentários e perfis**, desenvolvido 
 **Descrição:**
 Clone do **Netflix** com interface intuitiva.
 
-🔗 [Acesse o projeto](fakeflix-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto%20Django%20Netflix)
 
 **Tecnologias:**
 `HTML/CSS`, `JavaScript`, `API de Filmes`
@@ -151,7 +151,7 @@ Clone do **Netflix** com interface intuitiva.
 **Descrição:**
 Dashboard desenvolvido em **Streamlit** para apresentar dados internos de uma empresa fictícia de forma gráfica e iterativa.
 
-🔗 [Acesse o projeto](streamlit-interno-link)
+🔗 [Acesse o projeto](https://github.com/edsoncarvalhointuria/Projetos-Curso-Python/tree/30e8033a3617f214f08ac4a54ee85767da907846/Projeto-Streamlit-Site)
 
 **Tecnologias:**
 `Streamlit`, `Pandas`, `Plotly`
