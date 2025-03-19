@@ -24,7 +24,7 @@ st.markdown(f'Veja Aqui: {Path(Path('').absolute(), 'database/meubanco.db')}')
 # }}
 # print(stauth.Hasher.hash_passwords(credentials))
 
-with open('.streamlit/config.YAML') as arquivo:
+with open('./.streamlit/config.YAML') as arquivo:
     config = yaml.load(arquivo, SafeLoader)
     # credentials = config["credentials"]
 
