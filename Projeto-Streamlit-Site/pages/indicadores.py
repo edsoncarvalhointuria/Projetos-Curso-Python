@@ -1,5 +1,6 @@
 import streamlit as st
 from data_loader import carregar_base
+from pathlib import Path
 from unidecode import unidecode
 
 df = carregar_base()
@@ -8,7 +9,7 @@ df = carregar_base()
 def criar_card(icon, number, text, column):
     container = column.container(border=True, )
     coluna_esquerda, coluna_direita = container.columns([1,2.5])
-    coluna_esquerda.image(f"imagens/indicadores/{icon}")
+    coluna_esquerda.image(Path(Path(__file__).absolute().parent.parent,f"imagens/indicadores/{icon}"))
     coluna_direita.write(str(number))
     coluna_direita.write(text)
 
