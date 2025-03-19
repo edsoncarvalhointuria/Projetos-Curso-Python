@@ -13,6 +13,7 @@ from functools import partial
 from pages.models import session, Usuario
 
 st.markdown(f'Veja Aqui: {BASE_DIR}')
+st.markdown(f'Veja Path: {sys.path}')
 
 
 # DESSE JEITO TAMBÉM FUNCIONA
