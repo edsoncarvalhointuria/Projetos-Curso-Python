@@ -20,7 +20,7 @@ criar_card(icon="projetos_fechados.png", column=colunas[1], number=proj_fechados
 criar_card(icon="em_andamento.png", column=colunas[2], number=proj_fechados.loc[proj_fechados['Status']=="Em andamento", "Status"].count(), text="Em Andamento")
 
 
-criar_card(icon="total_orcado.png", column=colunas[0], number=f"R${proj_fechados['Valor Orçad'].sum():,}", text="Total Orçado")
+criar_card(icon="total_orcado.png", column=colunas[0], number=f"R${proj_fechados['Valor Orçado'].sum():,}", text="Total Orçado")
 criar_card(icon="total_pago.png", column=colunas[1], number=f"R${proj_fechados['Valor Negociado'].sum():,}", text="Total Pago")
 criar_card(icon="desconto.png", column=colunas[2], number=f"R${proj_fechados['Desconto Concedido'].sum():,}", text="Desconto")
 

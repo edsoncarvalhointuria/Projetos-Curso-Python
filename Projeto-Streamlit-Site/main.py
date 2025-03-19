@@ -50,7 +50,6 @@ def logout(authenticator):
 
 dados_login = autenticar_usuario(authenticator)
 
-
 if dados_login:
     
     is_admin = credentials["usernames"][dados_login[1]]["admin"]
@@ -68,6 +67,7 @@ if dados_login:
         })
     
     nav.run()
-
+else:
+        nav = st.navigation({"Conta":[st.Page(partial(logout,authenticator), title="Sair"),]})
 
 
