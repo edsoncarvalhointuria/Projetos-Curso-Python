@@ -1,5 +1,10 @@
 from pathlib import Path
-print(Path('').absolute())
+import sys
+import os
+
+# Adiciona o caminho correto ao sys.path
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(BASE_DIR)
 
 
 import streamlit as st
