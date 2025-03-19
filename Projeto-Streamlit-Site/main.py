@@ -1,10 +1,13 @@
+from pathlib import Path
+print(Path('').absolute())
+
+
 import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 from functools import partial
 from pages.models import session, Usuario
-from pathlib import Path
 
 st.markdown(f'Veja Aqui: {Path(Path('').absolute(), 'database/meubanco.db')}')
 
