@@ -1,5 +1,3 @@
-from pathlib import Path
-print('Veja aqui amigo', Path('').absolute())
 import streamlit as st
 import streamlit_authenticator as stauth
 from pages.models import session, Usuario

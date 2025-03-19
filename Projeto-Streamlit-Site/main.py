@@ -4,7 +4,6 @@ import sys
 BASE_DIR = Path(__file__).absolute().parent
 sys.path.append(str(BASE_DIR))
 
-
 import streamlit as st
 import streamlit_authenticator as stauth
 import yaml
@@ -12,9 +11,6 @@ from yaml.loader import SafeLoader
 from functools import partial
 from pages.models import session, Usuario
 
-st.markdown(f'Veja Aqui: {BASE_DIR}')
-st.markdown(f'Veja Path: {Path(BASE_DIR, '.streamlit/config.YAML')}')
-st.markdown(f'Veja Path: {Path(BASE_DIR, '.streamlit/config.YAML').exists()}')
 
 
 # DESSE JEITO TAMBÉM FUNCIONA
