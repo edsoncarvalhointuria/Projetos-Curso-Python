@@ -1,9 +1,7 @@
 from pathlib import Path
 import sys
-import os
 
-# Adiciona o caminho correto ao sys.path
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = Path(__file__).absolute().parent
 sys.path.append(BASE_DIR)
 
 
@@ -14,7 +12,7 @@ from yaml.loader import SafeLoader
 from functools import partial
 from pages.models import session, Usuario
 
-st.markdown(f'Veja Aqui: {Path(Path('').absolute(), 'database/meubanco.db')}')
+st.markdown(f'Veja Aqui: {BASE_DIR)}')
 
 
 # DESSE JEITO TAMBÉM FUNCIONA
