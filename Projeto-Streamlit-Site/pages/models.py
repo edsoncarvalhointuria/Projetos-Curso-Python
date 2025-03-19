@@ -1,8 +1,10 @@
 from sqlalchemy import Column, Integer, String, Boolean, create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+from pathlib import Path
 
-db = create_engine('sqlite:///database/meubanco.db') # CRIANDO O BANCO DE DADOS, DEPOIS ADICIONAR O LINK
+
+db = create_engine(f'sqlite:///{Path(Path('').absolute(), 'database/meubanco.db')}') # CRIANDO O BANCO DE DADOS, DEPOIS ADICIONAR O LINK
 Sessao = sessionmaker(bind=db) #CRIANDO UMA SESSÃO (BASICAMENTE UM SESSÃO NESTE BANCO DE DADOS)
 session = Sessao() # SOMENTE UMA CONVENSÃO
 

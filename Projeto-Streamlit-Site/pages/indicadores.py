@@ -1,9 +1,9 @@
 import streamlit as st
 from data_loader import carregar_base
 from unidecode import unidecode
-from pathlib import Path
 
 df = carregar_base()
+
 
 def criar_card(icon, number, text, column):
     container = column.container(border=True, )

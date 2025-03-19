@@ -4,6 +4,9 @@ import yaml
 from yaml.loader import SafeLoader
 from functools import partial
 from pages.models import session, Usuario
+from pathlib import Path
+
+st.markdown(f'Veja Aqui: {Path(Path('').absolute(), 'database/meubanco.db')}')
 
 
 # DESSE JEITO TAMBÉM FUNCIONA
