@@ -1,7 +1,7 @@
 import streamlit as st
 
 from pathlib import Path
-st.write(f'Veja aqui amigo: {Path(__file__).absolute()}')
+st.write(f'Veja aqui amigo: {Path(__file__).absolute().parent}')
 
 
 if st.session_state.get("name"):
