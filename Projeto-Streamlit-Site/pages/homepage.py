@@ -1,5 +1,8 @@
 import streamlit as st
 
+from pathlib import Path
+st.write(f'Veja aqui amigo: {Path('').absolute()}')
+
 
 if st.session_state.get("name"):
     usuario = st.session_state.get("name").split()
