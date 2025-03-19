@@ -6,7 +6,7 @@ Este projeto é uma  **simulação de um blog** , onde os usuários podem fazer 
 
 > 🔍 Observação: Este projeto não tem fins comerciais.
 
-**📌Acesse:** [Acesse o Site](https://web-production-637e8.up.railway.app/)
+**📌Acesse:** [Acesse o Site](https://sitecomunidade-556i.onrender.com/)
 
 **📧Login:** teste@gmail.com
 
