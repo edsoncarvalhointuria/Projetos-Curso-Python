@@ -2,6 +2,7 @@ import streamlit as st
 
 from pathlib import Path
 st.write(f'Veja aqui amigo: {Path(__file__).absolute().parent.parent}')
+st.write(f'Veja aqui amigo: {Path(Path(__file__).absolute().parent.parent, "database/meubanco.db").exists()}')
 
 
 if st.session_state.get("name"):
