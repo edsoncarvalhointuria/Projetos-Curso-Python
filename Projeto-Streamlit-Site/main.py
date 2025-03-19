@@ -24,7 +24,7 @@ st.markdown(f'Veja Path: {Path(BASE_DIR, '.streamlit/config.YAML').exists()}')
 # }}
 # print(stauth.Hasher.hash_passwords(credentials))
 
-with open(str(Path(BASE_DIR, 'streamlit/config.YAML'))) as arquivo:
+with open(str(Path(BASE_DIR, '.streamlit/config.YAML'))) as arquivo:
     config = yaml.load(arquivo, SafeLoader)
     # credentials = config["credentials"]
 
