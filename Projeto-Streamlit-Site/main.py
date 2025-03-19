@@ -12,7 +12,7 @@ from yaml.loader import SafeLoader
 from functools import partial
 from pages.models import session, Usuario
 
-st.markdown(f'Veja Aqui: {BASE_DIR)}')
+st.markdown(f'Veja Aqui: {BASE_DIR}')
 
 
 # DESSE JEITO TAMBÉM FUNCIONA
