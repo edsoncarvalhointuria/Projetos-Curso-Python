@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 
 BASE_DIR = Path(__file__).absolute().parent
-sys.path.append(BASE_DIR)
+sys.path.append(str(BASE_DIR))
 
 
 import streamlit as st
@@ -13,7 +13,8 @@ from functools import partial
 from pages.models import session, Usuario
 
 st.markdown(f'Veja Aqui: {BASE_DIR}')
-st.markdown(f'Veja Path: {sys.path}')
+st.markdown(f'Veja Path: {Path(BASE_DIR, 'streamlit/config.YAML')}')
+st.markdown(f'Veja Path: {Path(BASE_DIR, 'streamlit/config.YAML').exists()}')
 
 
 # DESSE JEITO TAMBÉM FUNCIONA
@@ -23,7 +24,7 @@ st.markdown(f'Veja Path: {sys.path}')
 # }}
 # print(stauth.Hasher.hash_passwords(credentials))
 
-with open('./.streamlit/config.YAML') as arquivo:
+with open(str(Path(BASE_DIR, 'streamlit/config.YAML'))) as arquivo:
     config = yaml.load(arquivo, SafeLoader)
     # credentials = config["credentials"]
 
