@@ -48,7 +48,7 @@ Entre em contato:
 <a href="mailto:edsoncarvalhointuria@gmail.com" title="Gmail">  
   <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white" alt="Gmail"/>  
 </a>  
-<a href="#" title="LinkedIn">  
+<a href="https://br.linkedin.com/in/edson-carvalho-inturia-1442a0129" title="LinkedIn">  
   <img src="https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>  
 </a>  
 </p>
