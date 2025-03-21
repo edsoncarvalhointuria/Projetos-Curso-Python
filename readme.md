@@ -174,11 +174,8 @@ Dashboard desenvolvido em **Streamlit** para apresentar dados internos de uma em
 <a href="mailto:edsoncarvalhointuria@gmail.com" title="Gmail">  
   <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white" alt="Gmail"/>  
 </a>  
-<a href="#" title="LinkedIn">  
+<a href="https://br.linkedin.com/in/edson-carvalho-inturia-1442a0129" title="LinkedIn">  
   <img src="https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>  
-</a>  
-<a href="https://wa.me/5511962400219" title="WhatsApp">  
-  <img src="https://img.shields.io/badge/-WhatsApp-25d366?style=flat-square&labelColor=25d366&logo=whatsapp&logoColor=white" alt="WhatsApp"/>  
 </a>  
 </p>
 
